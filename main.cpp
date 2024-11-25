@@ -1,3 +1,8 @@
-//
-// Created by carlo on 25/11/2024.
-//
+#include "Funciones/Funciones.h"
+
+int main() {
+
+    load_script("filename",true);
+    load_script();
+    return 0;
+}
