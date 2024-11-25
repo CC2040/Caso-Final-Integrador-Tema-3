@@ -2,11 +2,14 @@
 #include <iostream>
 #include <string>
 #include <cstdio>
+#include <stdexcept>
 
 
 using namespace std;
 
 ConsoleBox *consoleBox = new ConsoleBox; // suponemos que ya está inicializado
+
+const char* base_path = "../"; //Puntero donde se guardara la ruta del directorio actual con ../
 
 void load_script(const char* filename, bool show_script ){
     string script;
@@ -16,7 +19,7 @@ void load_script(const char* filename, bool show_script ){
         f = fopen(filename, "rb");
         if (!f)
         {
-            cerr << "error de apertura de " << filename << endl;
+            cerr << "El achivo " << filename <<" no existe."<< endl; //primera excepcion
             return;
         }
 
@@ -40,16 +43,17 @@ void load_script(const char* filename, bool show_script ){
     }
     catch (...)
     {
-        cerr << "error durante la lectura del archivo" << endl;
+        cerr << "error durante la lectura del archivo" << endl;  //segunda excepcion
         if(f)
             fclose(f);
     }
 }
 
-void load_script()
+void load_script2()
 {
     char filename[500];
     printf("Archivo: ");
     scanf("%499s", filename);
-    load_script(filename, true);
+    string fullfilename=string(base_path)+filename; //Concatenacion del directorio padre con el archivo a buscar ademas de transformar a base_path en un string
+    load_script(fullfilename.c_str(), true); //llamada de la funcion con la conversion de fullfilename en una cadena de tipo puntero
 }

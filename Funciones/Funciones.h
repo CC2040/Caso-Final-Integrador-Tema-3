@@ -18,7 +18,7 @@ struct ConsoleBox
     void set_text(const string &text) { cout << text << endl; }
 };
 
-void load_script(const char* filename, bool show_script);
-void load_script();
+void load_script(const char* filename, bool show_script =false );
+void load_script2();
 
 #endif //FUNCION1_H
