@@ -4,12 +4,17 @@
 #include <cstdio>
 #include <stdexcept>
 
+struct ConsoleBox
+{
+    void new_text() {/*...*/}
+    void set_text(const std::string &text) { std::cout << text << std::endl; }
+};
 
 using namespace std;
 
 ConsoleBox *consoleBox = new ConsoleBox; // suponemos que ya está inicializado
 
-const char* base_path = "../"; //Puntero donde se guardara la ruta del directorio actual con ../
+const char* base_path = "../"; //Puntero donde se guardara la ruta del directorio donde se encuentra el .exe echando un directorio hacia atrás
 
 void load_script(const char* filename, bool show_script ){
     string script;
