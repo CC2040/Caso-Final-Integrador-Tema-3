@@ -108,5 +108,11 @@ void load_script()
 Este código debería compilar y funcionar en CLion sin necesidad de agregar la directiva _CRT_SECURE_NO_WARNINGS, ya que no se están utilizando las versiones seguras específicas de Microsoft de las funciones de la biblioteca estándar de C.
 
 Por último, ten en cuenta que este código no realiza una comprobación completa de errores y no es robusto contra varios tipos de errores de entrada. Dependiendo de tu caso de uso específico, es posible que desees agregar comprobaciones de errores adicionales y manejar los fallos de manera más sofisticada.
+
 #Calificacion (Gabriel Kaakedjian Moradei)
-La parte de la funcion load 
+
+-La parte de las funciones load_scrip() deberian ser de diferente nombre ya que si el programa no soportara sobrecarga de funciones el codigo entraria en conflicto en llamar a una de las 2 funciones.  
+
+-La implementacion de escribir solo escribir solo la ruta relativa es correcta más no se encuentra en la funcion adecuada, lo ideal seria implementarla en la funcion void load_script(const char* filename, bool show_script) ya que en este apartado es donde se abre el archivo como tal.
+
+-En el main ocupa inecesariamente la libreria <iostream> y el namespace std; 
