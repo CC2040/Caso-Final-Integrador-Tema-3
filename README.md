@@ -109,7 +109,7 @@ Este código debería compilar y funcionar en CLion sin necesidad de agregar la 
 
 Por último, ten en cuenta que este código no realiza una comprobación completa de errores y no es robusto contra varios tipos de errores de entrada. Dependiendo de tu caso de uso específico, es posible que desees agregar comprobaciones de errores adicionales y manejar los fallos de manera más sofisticada.
 
-#Calificacion (Gabriel Kaakedjian Moradei)
+# Calificacion (Gabriel Kaakedjian Moradei)
 
 -La parte de las funciones load_scrip() deberian ser de diferente nombre ya que si el programa no soportara sobrecarga de funciones el codigo entraria en conflicto en llamar a una de las 2 funciones.  
 
